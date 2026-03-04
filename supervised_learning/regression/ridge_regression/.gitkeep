@@ -1,0 +1,74 @@
+"""
+Ridge Regression implemented from scratch using Gradient Descent.
+
+Author: Kavya Gada
+Purpose: Understand L2 regularization and regression optimization.
+"""
+
+import numpy as np
+
+
+class RidgeRegression:
+    """
+    Ridge Regression using Gradient Descent with L2 Regularization.
+    """
+
+    def __init__(self, alpha=1.0, learning_rate=0.01, epochs=1000):
+        """
+        Parameters
+        ----------
+        alpha : float
+            Regularization strength.
+        learning_rate : float
+            Step size for gradient descent.
+        epochs : int
+            Number of training iterations.
+        """
+
+        self.alpha = alpha
+        self.learning_rate = learning_rate
+        self.epochs = epochs
+
+        self.weights = None
+        self.bias = None
+        self.loss_history = []
+
+    def fit(self, X, y):
+        """
+        Train Ridge Regression model.
+        """
+
+        n_samples, n_features = X.shape
+
+        self.weights = np.zeros(n_features)
+        self.bias = 0
+
+        for _ in range(self.epochs):
+
+            y_pred = np.dot(X, self.weights) + self.bias
+
+            # Ridge gradients (L2 penalty)
+            dw = (
+                (1 / n_samples) * np.dot(X.T, (y_pred - y))
+                + (2 * self.alpha * self.weights)
+            )
+
+            db = (1 / n_samples) * np.sum(y_pred - y)
+
+            # Update parameters
+            self.weights -= self.learning_rate * dw
+            self.bias -= self.learning_rate * db
+
+            # Compute loss (MSE + L2 penalty)
+            mse = np.mean((y - y_pred) ** 2)
+            ridge_penalty = self.alpha * np.sum(self.weights ** 2)
+
+            loss = mse + ridge_penalty
+
+            self.loss_history.append(loss)
+
+    def predict(self, X):
+        """
+        Predict target values.
+        """
+        return np.dot(X, self.weights) + self.bias
