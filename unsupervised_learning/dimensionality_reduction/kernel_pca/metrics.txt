@@ -1,0 +1,2 @@
+Kernel PCA dimensionality reduction completed
+Components: 2

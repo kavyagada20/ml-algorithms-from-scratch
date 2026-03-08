@@ -25,10 +25,6 @@ env/
 *.joblib
 *.h5
 
-# Generated plots
-*.png
-*.jpg
-
 # Logs
 *.log
 
