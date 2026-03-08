@@ -1,0 +1,10 @@
+Apriori Frequent Itemsets
+{'milk'} : 0.6666666666666666
+{'bread'} : 1.0
+{'butter'} : 0.5
+{'beer'} : 0.3333333333333333
+{'milk', 'butter'} : 0.3333333333333333
+{'milk', 'bread'} : 0.6666666666666666
+{'beer', 'bread'} : 0.3333333333333333
+{'butter', 'bread'} : 0.5
+{'milk', 'bread', 'butter'} : 0.3333333333333333
