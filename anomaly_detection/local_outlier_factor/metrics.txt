@@ -1,0 +1,2 @@
+Local Outlier Factor anomaly detection completed
+Detected anomalies: 32
