@@ -1,0 +1,2 @@
+One-Class SVM anomaly detection completed
+Detected anomalies: 0
