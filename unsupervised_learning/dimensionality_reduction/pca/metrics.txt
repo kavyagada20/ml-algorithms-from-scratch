@@ -1,0 +1,1 @@
+Explained variance: [4.22824171 0.24267075]
