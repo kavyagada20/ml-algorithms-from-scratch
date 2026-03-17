@@ -1,0 +1,3 @@
+Policy Gradient Training Metrics
+Episodes: 300
+Average Reward: -13.506666666666666
